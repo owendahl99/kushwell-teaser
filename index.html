@@ -4,12 +4,9 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Kushwell — Launching Soon</title>
-  <meta name="description" content="Clarity for patients. Trust for providers. Kushwell is a patient-centered cannabis wellness platform built for a more mature industry." />
+  <meta name="description" content="Clarity for patients. Trust for providers. Kushwell is a patient-centered cannabis wellness platform built for a more mature cannabis industry." />
 
 <style>
-/* =========================
-   ROOT / THEME
-   ========================= */
 :root{
   --bg:#0b0f14;
   --panel: rgba(255,255,255,.06);
@@ -30,12 +27,12 @@
   --h1: clamp(34px, 4.6vw, 58px);
   --h2: clamp(24px, 3.3vw, 40px);
   --h3: clamp(20px, 2.6vw, 28px);
-  --p:  clamp(16px, 2.0vw, 20px);
-  --small: 14px;
+  --p:  clamp(16px, 2vw, 20px);
+  --small:14px;
 }
 
 *{ box-sizing:border-box; }
-html, body{ height:100%; }
+html,body{ height:100%; }
 
 body{
   margin:0;
@@ -44,85 +41,66 @@ body{
     radial-gradient(700px 420px at 18% 48%, rgba(106,214,255,.10) 0%, transparent 60%),
     radial-gradient(700px 420px at 82% 52%, rgba(125,255,179,.08) 0%, transparent 60%);
   color:var(--fg);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
 a{ color:inherit; }
 
-/* =========================
-   LAYOUT
-   ========================= */
 .container{
-  width:min(980px, 92vw);
+  width:min(980px,92vw);
   margin:0 auto;
   padding:36px 0 90px;
 }
 
-/* =========================
-   TOP BAR
-   ========================= */
+/* ===== Top Bar ===== */
 .topbar{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:18px;
+  align-items:center;
+  gap:16px;
   padding:14px 18px;
   border:1px solid var(--border);
   border-radius:16px;
-  background: linear-gradient(180deg, var(--panel), var(--panel2));
-  box-shadow: 0 14px 44px rgba(0,0,0,.35);
+  background: linear-gradient(180deg,var(--panel),var(--panel2));
+  box-shadow:0 14px 44px rgba(0,0,0,.35);
   position:sticky;
   top:14px;
-  backdrop-filter: blur(8px);
+  backdrop-filter:blur(8px);
   z-index:10;
 }
 
 .brand{
-  letter-spacing:.20em;
+  letter-spacing:.2em;
   font-weight:800;
-  text-transform:uppercase;
   font-size:18px;
-  white-space:nowrap;
 }
+
+.actions{ display:flex; gap:10px; flex-wrap:wrap; }
 
 .pill{
   padding:8px 12px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.05);
-  color: var(--muted);
-  font-size: var(--small);
-}
-
-.actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+  background:rgba(255,255,255,.05);
+  color:var(--muted);
+  font-size:var(--small);
 }
 
 .btn{
   padding:10px 14px;
   border-radius:999px;
-  font-weight:700;
   border:1px solid rgba(255,255,255,.20);
-  background: rgba(255,255,255,.06);
-  font-size:14px;
-  cursor:pointer;
+  background:rgba(255,255,255,.06);
+  font-weight:700;
   text-decoration:none;
 }
-.btn:hover{ background: rgba(255,255,255,.10); }
 
 .btn.primary{
-  background: var(--s);
+  background:var(--s);
   color:#071014;
-  border-color: rgba(0,0,0,.10);
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* ===== Hero ===== */
 header.hero{
   padding:44px 0 16px;
   text-align:center;
@@ -134,139 +112,115 @@ header.hero{
   padding:8px 12px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.05);
-  color: var(--muted);
+  background:rgba(255,255,255,.05);
   font-size:13px;
-  letter-spacing:.10em;
+  letter-spacing:.1em;
   text-transform:uppercase;
+  color:var(--muted);
 }
 
 h1{
   margin:0 0 10px;
-  font-size: var(--h1);
+  font-size:var(--h1);
   letter-spacing:.12em;
   text-transform:uppercase;
 }
 
 .hero-sub{
-  margin:0 auto;
   max-width:70ch;
-  font-size: var(--p);
-  line-height:1.6;
+  margin:0 auto;
+  font-size:var(--p);
 }
 
 .kicker{
-  margin:10px auto 0;
   max-width:66ch;
-  font-size: var(--p);
-  color: var(--muted);
-  line-height:1.6;
+  margin:10px auto 0;
+  color:var(--muted);
+  font-size:var(--p);
 }
 
-/* =========================
-   EMPOWERMENT ANIMATION
-   ========================= */
+/* ===== Empowerment Animation ===== */
 .kw-empowerment{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:56px 0 40px;
+  padding:48px 0;
 }
 
-.kw-svg{
-  width:100%;
-  max-width:800px;
-}
+.kw-svg{ width:100%; max-width:820px; }
 
-.circle{
-  fill:none;
-  stroke-width:2;
-  opacity:.65;
-}
+.circle{ fill:none; stroke-width:2; opacity:.7; }
 .knowledge{ stroke:var(--k); }
 .security{ stroke:var(--s); }
 .integrity{ stroke:var(--i); }
 
-.kw-patient line,
-.kw-patient circle,
-.kw-patient path{
-  stroke:var(--fg);
+/* Stick figure */
+.stick line,
+.stick circle,
+.stick path{
+  stroke:#eef3ff;
   stroke-width:3;
   fill:none;
   stroke-linecap:round;
 }
 
-/* Eyes blink */
-.eye{
-  fill:var(--fg);
-  animation: blink 5.6s infinite;
+/* Walking with knees */
+.left-leg{ animation:legL 1.4s ease-in-out infinite; transform-origin:200px 130px; }
+.right-leg{ animation:legR 1.4s ease-in-out infinite; transform-origin:200px 130px; }
+
+.left-arm{ animation:armL 1.4s ease-in-out infinite; transform-origin:200px 100px; }
+.right-arm{ animation:armR 1.4s ease-in-out infinite; transform-origin:200px 100px; }
+
+@keyframes legL{
+  0%,100%{ transform:rotate(10deg); }
+  50%{ transform:rotate(-18deg); }
+}
+@keyframes legR{
+  0%,100%{ transform:rotate(-10deg); }
+  50%{ transform:rotate(18deg); }
+}
+@keyframes armL{
+  0%,100%{ transform:rotate(-12deg); }
+  50%{ transform:rotate(12deg); }
+}
+@keyframes armR{
+  0%,100%{ transform:rotate(12deg); }
+  50%{ transform:rotate(-12deg); }
 }
 
-@keyframes blink{
-  0%,96%,100%{ transform: scaleY(1); }
-  97%{ transform: scaleY(.1); }
-}
-
-/* Smile */
-.smile{
-  stroke-width:2;
-  opacity:0;
-  animation: smileIn 1.2s ease forwards 2s;
-}
-
-/* Walk */
-.kw-patient{
-  animation: walk 6s ease-in-out infinite;
-}
-.left-leg{ animation: leg 1.2s ease-in-out infinite; }
-.right-leg{ animation: leg 1.2s ease-in-out infinite reverse; }
-.left-arm{ animation: arm 1.2s ease-in-out infinite reverse; }
-.right-arm{ animation: arm 1.2s ease-in-out infinite; }
-
-@keyframes walk{
-  from{ transform: translateX(0); }
-  to{ transform: translateX(36px); }
-}
-@keyframes leg{
-  0%,100%{ transform: rotate(6deg); }
-  50%{ transform: rotate(-6deg); }
-}
-@keyframes arm{
-  0%,100%{ transform: rotate(4deg); }
-  50%{ transform: rotate(-4deg); }
-}
+.smile{ opacity:0; animation:smileIn 1.4s ease forwards 1.8s; }
 @keyframes smileIn{ to{ opacity:1; } }
 
-.kw-caption{
+.caption{
   margin-top:18px;
   font-size:18px;
   color:var(--muted);
+}
+
+/* ===== CTA ===== */
+#cta{
+  padding:70px 0 44px;
   text-align:center;
 }
 
-/* =========================
-   CTA / CONTENT
-   ========================= */
-#cta{ padding:70px 0 44px; text-align:center; }
 .cta-wrap{ width:min(880px,92vw); margin:0 auto; }
-.cta-title{ font-size: var(--h2); margin-bottom:12px; }
-.cta-sub{ max-width:72ch; margin:0 auto 24px; font-size: var(--p); color:#c9d6ea; }
+.cta-title{ font-size:var(--h2); }
+.cta-sub{ max-width:72ch; margin:0 auto 24px; color:#c9d6ea; }
 
-section.content{ padding:18px 0 0; }
+/* ===== Content ===== */
+section.content{ padding:18px 0; }
 .content-wrap{ width:min(880px,92vw); margin:0 auto; }
 
-.divider{ height:1px; background: rgba(255,255,255,.12); margin:34px 0; }
+.divider{ height:1px; background:rgba(255,255,255,.12); margin:34px 0; }
 
-.section-title{ font-size: var(--h2); margin-bottom:12px; }
-
-.lead{ font-size: var(--p); line-height:1.7; color:#c9d6ea; max-width:78ch; }
+.section-title{ font-size:var(--h2); }
+.lead{ font-size:var(--p); color:#c9d6ea; }
 
 .callouts{ display:grid; gap:12px; }
-
 .callout{
   border:1px solid rgba(255,255,255,.12);
   border-radius:16px;
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
   padding:16px;
 }
 
@@ -282,17 +236,15 @@ footer{
 <body>
 <div class="container">
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="brand">KUSHWELL</div>
   <div class="actions">
     <span class="pill">Launching soon • Early access open</span>
-    <a class="btn" href="#early-access">Early access</a>
-    <a class="btn primary" href="#early-access">Join</a>
+    <a class="btn" href="#cta">Early access</a>
+    <a class="btn primary" href="#cta">Join</a>
   </div>
 </div>
 
-<!-- HERO -->
 <header class="hero">
   <div class="eyebrow">Launching soon • Early access open</div>
   <h1>Kushwell</h1>
@@ -304,36 +256,43 @@ footer{
   <p class="kicker"><strong>Built for a more mature cannabis industry.</strong></p>
 </header>
 
-<!-- EMPOWERMENT -->
 <section class="kw-empowerment">
-<svg viewBox="0 0 800 300" class="kw-svg" aria-label="Empowered patient walking with clarity">
-  <g class="venn">
-    <circle cx="420" cy="150" r="90" class="circle knowledge"/>
-    <circle cx="460" cy="150" r="90" class="circle security"/>
-    <circle cx="440" cy="190" r="90" class="circle integrity"/>
-  </g>
+<svg viewBox="0 0 800 300" class="kw-svg">
+  <circle cx="420" cy="150" r="90" class="circle knowledge"/>
+  <circle cx="460" cy="150" r="90" class="circle security"/>
+  <circle cx="440" cy="190" r="90" class="circle integrity"/>
 
-  <g class="kw-patient">
+  <g class="stick">
     <circle cx="200" cy="70" r="16"/>
     <path d="M192 74 Q200 80 208 74" class="smile"/>
-    <circle cx="195" cy="68" r="2" class="eye"/>
-    <circle cx="205" cy="68" r="2" class="eye"/>
     <line x1="200" y1="86" x2="200" y2="130"/>
-    <g class="left-arm"><line x1="200" y1="100" x2="170" y2="135"/></g>
-    <g class="right-arm"><line x1="200" y1="100" x2="230" y2="135"/></g>
-    <g class="left-leg"><line x1="200" y1="130" x2="185" y2="205"/></g>
-    <g class="right-leg"><line x1="200" y1="130" x2="215" y2="205"/></g>
+    <g class="left-arm"><line x1="200" y1="100" x2="170" y2="125"/></g>
+    <g class="right-arm"><line x1="200" y1="100" x2="230" y2="125"/></g>
+    <g class="left-leg">
+      <line x1="200" y1="130" x2="185" y2="165"/>
+      <line x1="185" y1="165" x2="190" y2="205"/>
+    </g>
+    <g class="right-leg">
+      <line x1="200" y1="130" x2="215" y2="165"/>
+      <line x1="215" y1="165" x2="210" y2="205"/>
+    </g>
   </g>
 </svg>
-<p class="kw-caption">Empowered patients move forward with clarity and confidence.</p>
+
+<p class="caption">Empowered patients move forward with clarity and confidence.</p>
 </section>
 
-<!-- ALL YOUR LONG-FORM CONTENT CONTINUES UNCHANGED BELOW -->
+<!-- FULL CONTENT SECTIONS (UNCHANGED) WOULD CONTINUE HERE -->
+
+<footer>
+  © <span id="year"></span> Kushwell. Built with integrity. Powered by clarity.<br>
+  Contact: <a href="mailto:hello@kushwell.com">hello@kushwell.com</a>
+</footer>
 
 </div>
 
 <script>
-document.getElementById("year")?.append(new Date().getFullYear());
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
