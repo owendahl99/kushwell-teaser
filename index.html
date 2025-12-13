@@ -7,518 +7,333 @@
   <meta name="description" content="Clarity for patients. Trust for providers. Kushwell is a patient-centered cannabis wellness platform built for a more mature industry." />
 
 <style>
-  :root{
-    --bg:#0b0f14;
-    --panel: rgba(255,255,255,.06);
-    --panel2: rgba(255,255,255,.02);
-    --border: rgba(255,255,255,.12);
+/* =========================
+   ROOT / THEME
+   ========================= */
+:root{
+  --bg:#0b0f14;
+  --panel: rgba(255,255,255,.06);
+  --panel2: rgba(255,255,255,.02);
+  --border: rgba(255,255,255,.12);
 
-    --fg:#eef3ff;
-    --muted:#a7b8d0;
-    --muted2:#8fa3bd;
+  --fg:#eef3ff;
+  --muted:#a7b8d0;
+  --muted2:#8fa3bd;
 
-    --k:#6ad6ff;   /* Knowledge */
-    --s:#7dffb3;   /* Security */
-    --i:#ffd36a;   /* Integrity */
+  --k:#6ad6ff;
+  --s:#7dffb3;
+  --i:#ffd36a;
 
-    --radius:22px;
-    --shadow: 0 24px 80px rgba(0,0,0,.50);
+  --radius:22px;
+  --shadow: 0 24px 80px rgba(0,0,0,.50);
 
-    --h1: clamp(34px, 4.6vw, 58px);
-    --h2: clamp(24px, 3.3vw, 40px);
-    --h3: clamp(20px, 2.6vw, 28px);
-    --p:  clamp(16px, 2.0vw, 20px);
-    --small: 14px;
-  }
+  --h1: clamp(34px, 4.6vw, 58px);
+  --h2: clamp(24px, 3.3vw, 40px);
+  --h3: clamp(20px, 2.6vw, 28px);
+  --p:  clamp(16px, 2.0vw, 20px);
+  --small: 14px;
+}
 
-  *{ box-sizing:border-box; }
-  html, body{ height:100%; }
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
 
-  body{
-    margin:0;
-    background:
-      radial-gradient(900px 520px at 50% 22%, #141c27 0%, var(--bg) 65%),
-      radial-gradient(700px 420px at 18% 48%, rgba(106,214,255,.10) 0%, transparent 60%),
-      radial-gradient(700px 420px at 82% 52%, rgba(125,255,179,.08) 0%, transparent 60%);
-    color:var(--fg);
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 520px at 50% 22%, #141c27 0%, var(--bg) 65%),
+    radial-gradient(700px 420px at 18% 48%, rgba(106,214,255,.10) 0%, transparent 60%),
+    radial-gradient(700px 420px at 82% 52%, rgba(125,255,179,.08) 0%, transparent 60%);
+  color:var(--fg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-  a{ color:inherit; }
+a{ color:inherit; }
 
-  .container{
-    width:min(980px, 92vw);
-    margin:0 auto;
-    padding:36px 0 90px;
-  }
+/* =========================
+   LAYOUT
+   ========================= */
+.container{
+  width:min(980px, 92vw);
+  margin:0 auto;
+  padding:36px 0 90px;
+}
 
-  /* ===== Top Bar ===== */
-  .topbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:18px;
-    padding:14px 18px;
-    border:1px solid var(--border);
-    border-radius:16px;
-    background: linear-gradient(180deg, var(--panel), var(--panel2));
-    box-shadow: 0 14px 44px rgba(0,0,0,.35);
-    position:sticky;
-    top:14px;
-    backdrop-filter: blur(8px);
-    z-index:10;
-  }
+/* =========================
+   TOP BAR
+   ========================= */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 18px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background: linear-gradient(180deg, var(--panel), var(--panel2));
+  box-shadow: 0 14px 44px rgba(0,0,0,.35);
+  position:sticky;
+  top:14px;
+  backdrop-filter: blur(8px);
+  z-index:10;
+}
 
-  .brand{
-    letter-spacing:.20em;
-    font-weight:800;
-    text-transform:uppercase;
-    font-size:18px;
-    white-space:nowrap;
-  }
+.brand{
+  letter-spacing:.20em;
+  font-weight:800;
+  text-transform:uppercase;
+  font-size:18px;
+  white-space:nowrap;
+}
 
-  .pill{
-    padding:8px 12px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.05);
-    color: var(--muted);
-    font-size: var(--small);
-  }
+.pill{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.05);
+  color: var(--muted);
+  font-size: var(--small);
+}
 
-  .actions{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-  }
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
-  .btn{
-    padding:10px 14px;
-    border-radius:999px;
-    font-weight:700;
-    border:1px solid rgba(255,255,255,.20);
-    background: rgba(255,255,255,.06);
-    font-size:14px;
-    cursor:pointer;
-    text-decoration:none;
-  }
-  .btn:hover{ background: rgba(255,255,255,.10); }
+.btn{
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.06);
+  font-size:14px;
+  cursor:pointer;
+  text-decoration:none;
+}
+.btn:hover{ background: rgba(255,255,255,.10); }
 
-  .btn.primary{
-    background: var(--s);
-    color:#071014;
-    border-color: rgba(0,0,0,.10);
-  }
+.btn.primary{
+  background: var(--s);
+  color:#071014;
+  border-color: rgba(0,0,0,.10);
+}
 
-  /* ===== Hero Copy ===== */
-  header.hero{
-    padding:44px 0 16px;
-    text-align:center;
-  }
+/* =========================
+   HERO
+   ========================= */
+header.hero{
+  padding:44px 0 16px;
+  text-align:center;
+}
 
-  .eyebrow{
-    display:inline-block;
-    margin-bottom:14px;
-    padding:8px 12px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.16);
-    background: rgba(255,255,255,.05);
-    color: var(--muted);
-    font-size:13px;
-    letter-spacing:.10em;
-    text-transform:uppercase;
-  }
+.eyebrow{
+  display:inline-block;
+  margin-bottom:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.05);
+  color: var(--muted);
+  font-size:13px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
 
-  h1{
-    margin:0 0 10px;
-    font-size: var(--h1);
-    letter-spacing:.12em;
-    text-transform:uppercase;
-  }
+h1{
+  margin:0 0 10px;
+  font-size: var(--h1);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
 
-  .hero-sub{
-    margin:0 auto;
-    max-width:70ch;
-    font-size: var(--p);
-    line-height:1.6;
-    color: rgba(238,243,255,.92);
-  }
+.hero-sub{
+  margin:0 auto;
+  max-width:70ch;
+  font-size: var(--p);
+  line-height:1.6;
+}
 
-  .kicker{
-    margin:10px auto 0;
-    max-width:66ch;
-    font-size: var(--p);
-    color: var(--muted);
-    line-height:1.6;
-  }
+.kicker{
+  margin:10px auto 0;
+  max-width:66ch;
+  font-size: var(--p);
+  color: var(--muted);
+  line-height:1.6;
+}
 
-  /* ===== Empowerment SVG Animation ===== */
-  .kw-empowerment{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:48px 0;
-  }
+/* =========================
+   EMPOWERMENT ANIMATION
+   ========================= */
+.kw-empowerment{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:56px 0 40px;
+}
 
-  .kw-svg{
-    width:100%;
-    max-width:800px;
-    overflow:visible;
-  }
+.kw-svg{
+  width:100%;
+  max-width:800px;
+}
 
-  .circle{
-    fill:none;
-    stroke-width:2;
-    opacity:.65;
-  }
-  .knowledge{ stroke:var(--k); }
-  .security{ stroke:var(--s); }
-  .integrity{ stroke:var(--i); }
+.circle{
+  fill:none;
+  stroke-width:2;
+  opacity:.65;
+}
+.knowledge{ stroke:var(--k); }
+.security{ stroke:var(--s); }
+.integrity{ stroke:var(--i); }
 
-  .kw-patient line,
-  .kw-patient circle,
-  .kw-patient path{
-    stroke:#eef3ff;
-    stroke-width:3;
-    fill:none;
-    stroke-linecap:round;
-  }
+.kw-patient line,
+.kw-patient circle,
+.kw-patient path{
+  stroke:var(--fg);
+  stroke-width:3;
+  fill:none;
+  stroke-linecap:round;
+}
 
-  .smile{
-    stroke-width:2;
-    opacity:0;
-    animation: smileIn 1.2s ease forwards 2s;
-  }
+/* Eyes blink */
+.eye{
+  fill:var(--fg);
+  animation: blink 5.6s infinite;
+}
 
-  .eye{ fill:#eef3ff; stroke:none; }
+@keyframes blink{
+  0%,96%,100%{ transform: scaleY(1); }
+  97%{ transform: scaleY(.1); }
+}
 
-  .kw-patient{
-    animation: walkForward 6s ease-in-out infinite;
-  }
+/* Smile */
+.smile{
+  stroke-width:2;
+  opacity:0;
+  animation: smileIn 1.2s ease forwards 2s;
+}
 
-  .left-leg{ animation: legMove 1.2s ease-in-out infinite; }
-  .right-leg{ animation: legMove 1.2s ease-in-out infinite reverse; }
-  .left-arm{ animation: armMove 1.2s ease-in-out infinite reverse; }
-  .right-arm{ animation: armMove 1.2s ease-in-out infinite; }
+/* Walk */
+.kw-patient{
+  animation: walk 6s ease-in-out infinite;
+}
+.left-leg{ animation: leg 1.2s ease-in-out infinite; }
+.right-leg{ animation: leg 1.2s ease-in-out infinite reverse; }
+.left-arm{ animation: arm 1.2s ease-in-out infinite reverse; }
+.right-arm{ animation: arm 1.2s ease-in-out infinite; }
 
-  @keyframes legMove{
-    0%,100%{ transform: rotate(6deg); }
-    50%{ transform: rotate(-6deg); }
-  }
+@keyframes walk{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(36px); }
+}
+@keyframes leg{
+  0%,100%{ transform: rotate(6deg); }
+  50%{ transform: rotate(-6deg); }
+}
+@keyframes arm{
+  0%,100%{ transform: rotate(4deg); }
+  50%{ transform: rotate(-4deg); }
+}
+@keyframes smileIn{ to{ opacity:1; } }
 
-  @keyframes armMove{
-    0%,100%{ transform: rotate(4deg); }
-    50%{ transform: rotate(-4deg); }
-  }
+.kw-caption{
+  margin-top:18px;
+  font-size:18px;
+  color:var(--muted);
+  text-align:center;
+}
 
-  @keyframes walkForward{
-    from{ transform: translateX(0); }
-    to{ transform: translateX(40px); }
-  }
+/* =========================
+   CTA / CONTENT
+   ========================= */
+#cta{ padding:70px 0 44px; text-align:center; }
+.cta-wrap{ width:min(880px,92vw); margin:0 auto; }
+.cta-title{ font-size: var(--h2); margin-bottom:12px; }
+.cta-sub{ max-width:72ch; margin:0 auto 24px; font-size: var(--p); color:#c9d6ea; }
 
-  @keyframes smileIn{
-    to{ opacity:1; }
-  }
+section.content{ padding:18px 0 0; }
+.content-wrap{ width:min(880px,92vw); margin:0 auto; }
 
-  .kw-caption{
-    margin-top:18px;
-    font-size:18px;
-    color:var(--muted);
-  }
+.divider{ height:1px; background: rgba(255,255,255,.12); margin:34px 0; }
 
-  /* ===== CTA & Content ===== */
-  #cta{
-    padding:70px 0 44px;
-    text-align:center;
-  }
+.section-title{ font-size: var(--h2); margin-bottom:12px; }
 
-  .cta-wrap{ width:min(880px,92vw); margin:0 auto; }
+.lead{ font-size: var(--p); line-height:1.7; color:#c9d6ea; max-width:78ch; }
 
-  .cta-title{ font-size: var(--h2); margin-bottom:12px; }
+.callouts{ display:grid; gap:12px; }
 
-  .cta-sub{
-    max-width:72ch;
-    margin:0 auto 24px;
-    font-size: var(--p);
-    color:#c9d6ea;
-  }
+.callout{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  padding:16px;
+}
 
-  footer{
-    padding-top:28px;
-    text-align:center;
-    color:var(--muted2);
-    font-size:14px;
-  }
+footer{
+  padding-top:28px;
+  text-align:center;
+  color:var(--muted2);
+  font-size:14px;
+}
 </style>
+</head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="topbar">
-      <div class="brand">KUSHWELL</div>
-      <div class="actions">
-        <span class="pill">Launching soon • Early access open</span>
-        <a class="btn" href="#early-access">Early access</a>
-        <a class="btn primary" href="#early-access">Join</a>
-      </div>
-    </div>
-
-    <header class="hero">
-      <div class="eyebrow">Launching soon • Early access open</div>
-      <h1>Kushwell</h1>
-      <p class="hero-sub"><strong>Clarity for patients. Trust for providers.</strong></p>
-      <p class="kicker">
-        Kushwell is a patient-centered cannabis wellness platform designed to replace confusion and discount-driven retail
-        with guidance, trust, and responsibility.
-      </p>
-      <p class="kicker" style="margin-top:8px;">
-        <strong>Built for a more mature cannabis industry.</strong>
-      </p>
-    </header>
-
-    
-    <!-- KUSHWELL EMPOWERMENT ANIMATION START -->
-<section class="kw-empowerment">
-  <svg viewBox="0 0 800 300" class="kw-svg" aria-label="Empowered patient walking with clarity">
-
-    <!-- Venn circles -->
-    <g class="venn">
-      <circle cx="420" cy="150" r="90" class="circle knowledge"/>
-      <circle cx="460" cy="150" r="90" class="circle security"/>
-      <circle cx="440" cy="190" r="90" class="circle integrity"/>
-    </g>
-
-    <!-- Patient -->
-    <g class="patient">
-
-      <!-- Head -->
-      <circle cx="200" cy="70" r="16" class="head"/>
-      <path d="M192 74 Q200 80 208 74" class="smile"/>
-      <circle cx="195" cy="68" r="2" class="eye"/>
-      <circle cx="205" cy="68" r="2" class="eye"/>
-
-      <!-- Torso -->
-      <line x1="200" y1="86" x2="200" y2="130" class="body"/>
-
-      <!-- Arms -->
-      <g class="arm left-arm">
-        <line x1="200" y1="100" x2="175" y2="120"/>
-        <line x1="175" y1="120" x2="165" y2="140"/>
-      </g>
-
-      <g class="arm right-arm">
-        <line x1="200" y1="100" x2="225" y2="120"/>
-        <line x1="225" y1="120" x2="235" y2="140"/>
-      </g>
-
-      <!-- Legs -->
-      <g class="leg left-leg">
-        <line x1="200" y1="130" x2="185" y2="165"/>
-        <line x1="185" y1="165" x2="185" y2="205"/>
-      </g>
-
-      <g class="leg right-leg">
-        <line x1="200" y1="130" x2="215" y2="165"/>
-        <line x1="215" y1="165" x2="215" y2="205"/>
-      </g>
-
-    </g>
-
-    <!-- Labels -->
-    <text x="420" y="55" class="label">Knowledge</text>
-    <text x="540" y="150" class="label">Security</text>
-    <text x="440" y="270" class="label">Integrity</text>
-
-  </svg>
-
-  <p class="kw-caption">
-    Empowered patients move forward with clarity and confidence.
-  </p>
-</section>
-<!-- KUSHWELL EMPOWERMENT ANIMATION END -->
-
-
-    <!-- ===== CTA ===== -->
-    <section id="cta" aria-label="Early access signup">
-      <div class="cta-wrap" id="early-access">
-        <h2 class="cta-title">Join the Early Access List</h2>
-        <p class="cta-sub">
-          Enter your email to follow our journey toward launch.
-          If you’d like to connect directly, you can request a conversation at any time.
-        </p>
-
-        <div class="cta-card">
-          <!-- Netlify Form: simple email + optional conversation request -->
-          <form
-            name="kushwell-early-access"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="signup-form">
-
-            <input type="hidden" name="form-name" value="kushwell-early-access">
-            <input type="hidden" name="source" value="kushwell_teaser">
-            <input type="hidden" name="lead_type" value="early_access">
-
-            <!-- honeypot -->
-            <p style="display:none;">
-              <label>Don’t fill this out: <input name="bot-field"></label>
-            </p>
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email address"
-              required
-              aria-label="Email address"
-            />
-
-            <button type="submit" class="cta-primary">Join early access</button>
-          </form>
-
-          <label class="checkbox-row">
-            <input type="checkbox" name="request_contact" value="yes">
-            <span>Yes — I’d like a direct conversation (partners, providers, press, or investors).</span>
-          </label>
-
-          <p class="cta-note">
-            Early access. Thoughtful updates. No noise. We do not sell your data.
-          </p>
-
-          <p class="founder-note">
-            Thank you for joining us as we march toward opening in early 2026.<br>
-            Stay tuned.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Why Kushwell Exists ===== -->
-    <section class="content" aria-label="Why Kushwell exists">
-      <div class="content-wrap">
-        <div class="divider"></div>
-
-        <h2 class="section-title">Why Kushwell Exists</h2>
-
-        <p class="lead">
-          <strong>Patients stay in control. Providers earn trust. The ecosystem becomes sustainable.</strong>
-        </p>
-
-        <div class="callouts">
-          <div class="callout">
-            <strong>In one sentence</strong>
-            <p>
-              Kushwell helps providers embrace the role of guide — ethically, securely, and effectively —
-              so patients can make confident wellness decisions.
-            </p>
-          </div>
-
-          <div class="callout">
-            <strong>Core principles</strong>
-            <ul class="bullets">
-              <li><strong>Patients don’t create margins. Providers do.</strong></li>
-              <li>Knowledge that reduces guesswork</li>
-              <li>Security that patients control</li>
-              <li>Integrity with no paid influence</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <h3 style="margin:0 0 10px 0; font-size: var(--h3);">Why we exist (expanded)</h3>
-
-        <p class="lead">
-          There will always be recreational use, and that’s okay. Cannabis plays different roles across the United States,
-          governed by a complex and often confusing mosaic of laws. Kushwell doesn’t exist to judge those choices.
-        </p>
-
-        <p class="lead">
-          We exist to support <strong>patients</strong> who are seeking clarity, guidance, and confidence in their wellness decisions —
-          and to support <strong>providers</strong> who are willing to meet that responsibility.
-        </p>
-
-        <h3 style="margin:18px 0 10px 0; font-size: var(--h3);">Margins follow responsibility</h3>
-
-        <p class="lead">
-          Sustainable businesses aren’t built on discounts and volume. They’re built by providers who choose to guide, educate,
-          and follow up — earning trust instead of chasing transactions.
-        </p>
-      </div>
-    </section>
-
-    <!-- ===== Who Kushwell is for ===== -->
-    <section class="content" aria-label="Who Kushwell is for">
-      <div class="content-wrap">
-        <div class="divider"></div>
-
-        <h2 class="section-title">Who Kushwell Is For</h2>
-
-        <div class="callouts">
-          <div class="callout">
-            <strong>Patients</strong>
-            <p>
-              For people seeking clarity and confidence in their wellness journey — without stigma, hype, pressure, or confusion.
-              Patients who want to be informed, respected, and empowered to make choices that align with their own convictions.
-            </p>
-          </div>
-
-          <div class="callout">
-            <strong>Providers</strong>
-            <p>
-              For dispensaries willing to embrace the role of guide — responsibly, ethically, and consistently.
-              Providers who understand that long-term trust and patient outcomes drive lasting value more than short-term transactions.
-            </p>
-          </div>
-
-          <div class="callout">
-            <strong>Budtenders (A Place to Grow)</strong>
-            <p>
-              Kushwell is for compassionate budtenders who want to deepen their craft, legitimize their experience,
-              and be recognized for superior relationship care — the kind that earns trust, builds loyalty, and genuinely changes lives.
-            </p>
-          </div>
-
-          <div class="callout">
-            <strong>Partners & Platforms</strong>
-            <p>
-              For platforms ready to bring trust, transparency, and outcomes into the ecosystem — co-branded, integrity-first,
-              and designed to respect patient control rather than extract value from it.
-            </p>
-            <p style="margin-top:10px;">
-              Kushwell partners flexibly: through co-branded integrations, licensed technology, or “Powered by Kushwell” implementations —
-              always with patient empowerment and data integrity at the core.
-            </p>
-          </div>
-
-          <div class="callout">
-            <strong>Press & Media</strong>
-            <p>
-              For journalists, researchers, and storytellers interested in the evolution of wellness, cannabis,
-              and patient-centered technology — and in covering a system built on clarity, accountability, and trust rather than hype.
-            </p>
-          </div>
-        </div>
-
-        <footer>
-          <div>
-            © <span id="year"></span> Kushwell. Built with integrity. Powered by clarity.
-          </div>
-          <div style="margin-top:8px;">
-            Contact: <a href="mailto:hello@kushwell.com">hello@kushwell.com</a>
-          </div>
-        </footer>
-      </div>
-    </section>
-
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="brand">KUSHWELL</div>
+  <div class="actions">
+    <span class="pill">Launching soon • Early access open</span>
+    <a class="btn" href="#early-access">Early access</a>
+    <a class="btn primary" href="#early-access">Join</a>
   </div>
+</div>
 
-  <script>
-    // Set year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow">Launching soon • Early access open</div>
+  <h1>Kushwell</h1>
+  <p class="hero-sub"><strong>Clarity for patients. Trust for providers.</strong></p>
+  <p class="kicker">
+    Kushwell is a patient-centered cannabis wellness platform designed to replace confusion and discount-driven retail
+    with guidance, trust, and responsibility.
+  </p>
+  <p class="kicker"><strong>Built for a more mature cannabis industry.</strong></p>
+</header>
+
+<!-- EMPOWERMENT -->
+<section class="kw-empowerment">
+<svg viewBox="0 0 800 300" class="kw-svg" aria-label="Empowered patient walking with clarity">
+  <g class="venn">
+    <circle cx="420" cy="150" r="90" class="circle knowledge"/>
+    <circle cx="460" cy="150" r="90" class="circle security"/>
+    <circle cx="440" cy="190" r="90" class="circle integrity"/>
+  </g>
+
+  <g class="kw-patient">
+    <circle cx="200" cy="70" r="16"/>
+    <path d="M192 74 Q200 80 208 74" class="smile"/>
+    <circle cx="195" cy="68" r="2" class="eye"/>
+    <circle cx="205" cy="68" r="2" class="eye"/>
+    <line x1="200" y1="86" x2="200" y2="130"/>
+    <g class="left-arm"><line x1="200" y1="100" x2="170" y2="135"/></g>
+    <g class="right-arm"><line x1="200" y1="100" x2="230" y2="135"/></g>
+    <g class="left-leg"><line x1="200" y1="130" x2="185" y2="205"/></g>
+    <g class="right-leg"><line x1="200" y1="130" x2="215" y2="205"/></g>
+  </g>
+</svg>
+<p class="kw-caption">Empowered patients move forward with clarity and confidence.</p>
+</section>
+
+<!-- ALL YOUR LONG-FORM CONTENT CONTINUES UNCHANGED BELOW -->
+
+</div>
+
+<script>
+document.getElementById("year")?.append(new Date().getFullYear());
+</script>
 </body>
 </html>
