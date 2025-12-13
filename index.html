@@ -4,295 +4,424 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Kushwell — Launching Soon</title>
-  <meta name="description" content="Clarity for patients. Trust for providers. Kushwell is a patient-centered cannabis wellness platform built for a more mature cannabis industry." />
+  <meta name="description" content="Clarity for patients. Trust for providers. Kushwell is a patient-centered cannabis wellness platform built for a more mature industry." />
 
-<style>
-:root{
-  --bg:#0b0f14;
-  --panel: rgba(255,255,255,.06);
-  --panel2: rgba(255,255,255,.02);
-  --border: rgba(255,255,255,.12);
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.02);
+      --border: rgba(255,255,255,.12);
 
-  --fg:#eef3ff;
-  --muted:#a7b8d0;
-  --muted2:#8fa3bd;
+      --fg:#eef3ff;
+      --muted:#a7b8d0;
+      --muted2:#8fa3bd;
 
-  --k:#6ad6ff;
-  --s:#7dffb3;
-  --i:#ffd36a;
+      --k:#6ad6ff;   /* Knowledge */
+      --s:#7dffb3;   /* Security */
+      --i:#ffd36a;   /* Integrity */
 
-  --radius:22px;
-  --shadow: 0 24px 80px rgba(0,0,0,.50);
+      --radius:22px;
+      --shadow: 0 24px 80px rgba(0,0,0,.50);
 
-  --h1: clamp(34px, 4.6vw, 58px);
-  --h2: clamp(24px, 3.3vw, 40px);
-  --h3: clamp(20px, 2.6vw, 28px);
-  --p:  clamp(16px, 2vw, 20px);
-  --small:14px;
-}
+      --h1: clamp(34px, 4.6vw, 58px);
+      --h2: clamp(24px, 3.3vw, 40px);
+      --h3: clamp(20px, 2.6vw, 28px);
+      --p:  clamp(16px, 2.0vw, 20px);
+      --small: 14px;
+    }
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 520px at 50% 22%, #141c27 0%, var(--bg) 65%),
+        radial-gradient(700px 420px at 18% 48%, rgba(106,214,255,.10) 0%, transparent 60%),
+        radial-gradient(700px 420px at 82% 52%, rgba(125,255,179,.08) 0%, transparent 60%);
+      color:var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+    }
 
-body{
-  margin:0;
-  background:
-    radial-gradient(900px 520px at 50% 22%, #141c27 0%, var(--bg) 65%),
-    radial-gradient(700px 420px at 18% 48%, rgba(106,214,255,.10) 0%, transparent 60%),
-    radial-gradient(700px 420px at 82% 52%, rgba(125,255,179,.08) 0%, transparent 60%);
-  color:var(--fg);
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-}
+    a{ color:inherit; }
 
-a{ color:inherit; }
+    .container{
+      width:min(980px,92vw);
+      margin:0 auto;
+      padding:36px 0 90px;
+    }
 
-.container{
-  width:min(980px,92vw);
-  margin:0 auto;
-  padding:36px 0 90px;
-}
+    /* ===== Top Bar ===== */
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 18px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      box-shadow:0 14px 44px rgba(0,0,0,.35);
+      position:sticky;
+      top:14px;
+      backdrop-filter:blur(8px);
+      z-index:10;
+    }
 
-/* ===== Top Bar ===== */
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    .brand{
+      letter-spacing:.20em;
+      font-weight:800;
+      text-transform:uppercase;
+      font-size:18px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+      font-size:var(--small);
+    }
+
+    .btn{
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.06);
+      font-size:14px;
+      text-decoration:none;
+    }
+
+    .btn.primary{
+      background:var(--s);
+      color:#071014;
+      border-color:rgba(0,0,0,.10);
+    }
+
+    /* ===== Hero ===== */
+    header.hero{
+      text-align:center;
+      padding:44px 0 16px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:var(--h1);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .hero-sub{
+      max-width:70ch;
+      margin:0 auto;
+      font-size:var(--p);
+      color:rgba(238,243,255,.92);
+    }
+
+    .kicker{
+      max-width:66ch;
+      margin:10px auto 0;
+      font-size:var(--p);
+      color:var(--muted);
+    }
+
+    /* ===== Sections ===== */
+    section{
+      padding:48px 0;
+    }
+
+    .section-title{
+      font-size:var(--h2);
+      margin-bottom:12px;
+    }
+
+    .lead{
+      max-width:78ch;
+      font-size:var(--p);
+      color:#c9d6ea;
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(255,255,255,.12);
+      margin:36px 0;
+    }
+
+    .callouts{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .callout{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    }
+
+    .callout strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    ul{
+      margin:10px 0 0 18px;
+    }
+
+    /* ===== CTA ===== */
+    #cta{
+      text-align:center;
+    }
+
+    .cta-card{
+      margin-top:20px;
+      padding:26px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    }
+
+    .signup-form{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .signup-form input{
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.06);
+      color:var(--fg);
+      min-width:260px;
+    }
+
+    .founder-note{
+      margin-top:26px;
+      font-family:cursive;
+      font-size:18px;
+      color:#d8e2f1;
+    }
+
+    /* ===== Kushwell Corner ===== */
+    .corner{
+      margin-top:60px;
+      padding:28px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.18);
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .corner-pillars{
+      display:flex;
+      justify-content:center;
+      gap:22px;
+      margin:18px 0;
+      flex-wrap:wrap;
+    }
+
+    .pillar{
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.04em;
+      border:1px solid;
+    }
+
+    .pillar.k{ color:var(--k); border-color:rgba(106,214,255,.35); }
+    .pillar.s{ color:var(--s); border-color:rgba(125,255,179,.35); }
+    .pillar.i{ color:var(--i); border-color:rgba(255,211,106,.35); }
+
+    footer{
+      margin-top:48px;
+      text-align:center;
+      color:var(--muted2);
+      font-size:14px;
+    }
+
+    .corner-pillars{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap:16px;
-  padding:14px 18px;
-  border:1px solid var(--border);
+  margin:24px 0;
+}
+
+.pillar{
+  display:block;
+  padding:18px 16px;
   border-radius:16px;
-  background: linear-gradient(180deg,var(--panel),var(--panel2));
-  box-shadow:0 14px 44px rgba(0,0,0,.35);
-  position:sticky;
-  top:14px;
-  backdrop-filter:blur(8px);
-  z-index:10;
-}
-
-.brand{
-  letter-spacing:.2em;
-  font-weight:800;
-  font-size:18px;
-}
-
-.actions{ display:flex; gap:10px; flex-wrap:wrap; }
-
-.pill{
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.05);
-  color:var(--muted);
-  font-size:var(--small);
-}
-
-.btn{
-  padding:10px 14px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.20);
-  background:rgba(255,255,255,.06);
-  font-weight:700;
+  border:1px solid rgba(255,255,255,.14);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  text-align:left;
   text-decoration:none;
+  box-shadow: 0 10px 34px rgba(0,0,0,.28);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-.btn.primary{
-  background:var(--s);
-  color:#071014;
+.pillar:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px rgba(0,0,0,.36);
 }
 
-/* ===== Hero ===== */
-header.hero{
-  padding:44px 0 16px;
-  text-align:center;
-}
-
-.eyebrow{
-  display:inline-block;
-  margin-bottom:14px;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(255,255,255,.05);
-  font-size:13px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-
-h1{
-  margin:0 0 10px;
-  font-size:var(--h1);
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.hero-sub{
-  max-width:70ch;
-  margin:0 auto;
-  font-size:var(--p);
-}
-
-.kicker{
-  max-width:66ch;
-  margin:10px auto 0;
-  color:var(--muted);
-  font-size:var(--p);
-}
-
-/* ===== Empowerment Animation ===== */
-.kw-empowerment{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:48px 0;
-}
-
-.kw-svg{ width:100%; max-width:820px; }
-
-.circle{ fill:none; stroke-width:2; opacity:.7; }
-.knowledge{ stroke:var(--k); }
-.security{ stroke:var(--s); }
-.integrity{ stroke:var(--i); }
-
-/* Stick figure */
-.stick line,
-.stick circle,
-.stick path{
-  stroke:#eef3ff;
-  stroke-width:3;
-  fill:none;
-  stroke-linecap:round;
-}
-
-/* Walking with knees */
-.left-leg{ animation:legL 1.4s ease-in-out infinite; transform-origin:200px 130px; }
-.right-leg{ animation:legR 1.4s ease-in-out infinite; transform-origin:200px 130px; }
-
-.left-arm{ animation:armL 1.4s ease-in-out infinite; transform-origin:200px 100px; }
-.right-arm{ animation:armR 1.4s ease-in-out infinite; transform-origin:200px 100px; }
-
-@keyframes legL{
-  0%,100%{ transform:rotate(10deg); }
-  50%{ transform:rotate(-18deg); }
-}
-@keyframes legR{
-  0%,100%{ transform:rotate(-10deg); }
-  50%{ transform:rotate(18deg); }
-}
-@keyframes armL{
-  0%,100%{ transform:rotate(-12deg); }
-  50%{ transform:rotate(12deg); }
-}
-@keyframes armR{
-  0%,100%{ transform:rotate(12deg); }
-  50%{ transform:rotate(-12deg); }
-}
-
-.smile{ opacity:0; animation:smileIn 1.4s ease forwards 1.8s; }
-@keyframes smileIn{ to{ opacity:1; } }
-
-.caption{
-  margin-top:18px;
+.pillar strong{
+  display:block;
   font-size:18px;
-  color:var(--muted);
+  letter-spacing:.04em;
+  margin-bottom:6px;
 }
 
-/* ===== CTA ===== */
-#cta{
-  padding:70px 0 44px;
-  text-align:center;
-}
-
-.cta-wrap{ width:min(880px,92vw); margin:0 auto; }
-.cta-title{ font-size:var(--h2); }
-.cta-sub{ max-width:72ch; margin:0 auto 24px; color:#c9d6ea; }
-
-/* ===== Content ===== */
-section.content{ padding:18px 0; }
-.content-wrap{ width:min(880px,92vw); margin:0 auto; }
-
-.divider{ height:1px; background:rgba(255,255,255,.12); margin:34px 0; }
-
-.section-title{ font-size:var(--h2); }
-.lead{ font-size:var(--p); color:#c9d6ea; }
-
-.callouts{ display:grid; gap:12px; }
-.callout{
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:16px;
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
-  padding:16px;
-}
-
-footer{
-  padding-top:28px;
-  text-align:center;
-  color:var(--muted2);
+.pillar-sub{
+  display:block;
   font-size:14px;
+  color:#c9d6ea;
+  line-height:1.5;
 }
-</style>
+
+/* Accent borders */
+.pillar.k{ border-color: rgba(106,214,255,.35); }
+.pillar.s{ border-color: rgba(125,255,179,.35); }
+.pillar.i{ border-color: rgba(255,211,106,.35); }
+
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
 
-<div class="topbar">
-  <div class="brand">KUSHWELL</div>
-  <div class="actions">
-    <span class="pill">Launching soon • Early access open</span>
-    <a class="btn" href="#cta">Early access</a>
-    <a class="btn primary" href="#cta">Join</a>
+    <div class="topbar">
+      <div class="brand">KUSHWELL</div>
+      <div class="actions">
+        <span class="pill">Launching soon • Early access open</span>
+        <a class="btn" href="#cta">Early access</a>
+        <a class="btn primary" href="#cta">Join</a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="eyebrow">Launching soon • Early access open</div>
+      <h1>Kushwell</h1>
+      <p class="hero-sub"><strong>Clarity for patients. Trust for providers.</strong></p>
+      <p class="kicker">
+        Kushwell is a patient-centered cannabis wellness platform designed to replace confusion and discount-driven retail
+        with guidance, trust, and responsibility.
+      </p>
+      <p class="kicker"><strong>Built for a more mature cannabis industry.</strong></p>
+    </header>
+
+    <section>
+      <h2 class="section-title">Why Kushwell Exists</h2>
+      <p class="lead">
+        <strong>Patients stay in control. Providers earn trust. The ecosystem becomes sustainable.</strong>
+      </p>
+      <div class="callouts">
+        <div class="callout">
+          <strong>In one sentence</strong>
+          Kushwell helps providers embrace the role of guide — ethically, securely, and effectively —
+          so patients can make confident wellness decisions.
+        </div>
+        <div class="callout">
+          <strong>Core principles</strong>
+          <ul>
+            <li>Patients don’t create margins. Providers do.</li>
+            <li>Knowledge that reduces guesswork</li>
+            <li>Security that patients control</li>
+            <li>Integrity with no paid influence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta">
+      <h2 class="section-title">Join the Early Access List</h2>
+      <p class="lead">
+        Enter your email to follow our journey toward launch.
+      </p>
+      <div class="cta-card">
+        <form class="signup-form" name="kushwell-early-access" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="kushwell-early-access">
+          <input type="email" name="email" placeholder="Email address" required>
+          <button class="btn primary" type="submit">Join early access</button>
+        </form>
+        <p class="founder-note">
+          Thank you for joining us as we march toward opening in early 2026.<br>Stay tuned.
+        </p>
+      </div>
+    </section>
+  
+    <section class="corner" aria-label="The Kushwell Corner">
+      <h2 class="section-title">The Kushwell Corner</h2>
+
+      <p class="lead">
+        A patient-centered decision space where knowledge, security, and integrity
+        govern every interaction.
+      </p>
+
+      <div class="corner-pillars">
+
+        <!-- Knowledge -->
+        <a href="/corner/knowledge/" class="pillar k" aria-label="Knowledge Signal">
+          <strong>Knowledge</strong>
+          <span class="pillar-sub">
+            Why cannabis has a knowledge gap — and why disciplined learning matters
+          </span>
+        </a>
+
+        <!-- Security -->
+        <a href="/corner/security/" class="pillar s" aria-label="Security Signal">
+          <strong>Security</strong>
+          <span class="pillar-sub">
+            Why Kushwell treats patient protection as a standard of care
+          </span>
+        </a>
+
+        <!-- Integrity -->
+        <a href="/corner/integrity/" class="pillar i" aria-label="Integrity Signal">
+          <strong>Integrity</strong>
+          <span class="pillar-sub">
+            Why trust, not discounts, defines sustainable cannabis
+          </span>
+        </a>
+
+      </div>
+
+      <p class="lead">
+        More clarity is coming — one signal at a time.
+        Check back regularly as we introduce curated insights explaining how the
+        Kushwell Corner protects patients and empowers responsible guidance.
+      </p>
+    </section>
+
+    <footer>
+      © 2025 Kushwell. Built with integrity. Powered by clarity.<br>
+      Contact: <a href="mailto:hello@kushwell.com">hello@kushwell.com</a>
+    </footer>
+
   </div>
-</div>
-
-<header class="hero">
-  <div class="eyebrow">Launching soon • Early access open</div>
-  <h1>Kushwell</h1>
-  <p class="hero-sub"><strong>Clarity for patients. Trust for providers.</strong></p>
-  <p class="kicker">
-    Kushwell is a patient-centered cannabis wellness platform designed to replace confusion and discount-driven retail
-    with guidance, trust, and responsibility.
-  </p>
-  <p class="kicker"><strong>Built for a more mature cannabis industry.</strong></p>
-</header>
-
-<section class="kw-empowerment">
-<svg viewBox="0 0 800 300" class="kw-svg">
-  <circle cx="420" cy="150" r="90" class="circle knowledge"/>
-  <circle cx="460" cy="150" r="90" class="circle security"/>
-  <circle cx="440" cy="190" r="90" class="circle integrity"/>
-
-  <g class="stick">
-    <circle cx="200" cy="70" r="16"/>
-    <path d="M192 74 Q200 80 208 74" class="smile"/>
-    <line x1="200" y1="86" x2="200" y2="130"/>
-    <g class="left-arm"><line x1="200" y1="100" x2="170" y2="125"/></g>
-    <g class="right-arm"><line x1="200" y1="100" x2="230" y2="125"/></g>
-    <g class="left-leg">
-      <line x1="200" y1="130" x2="185" y2="165"/>
-      <line x1="185" y1="165" x2="190" y2="205"/>
-    </g>
-    <g class="right-leg">
-      <line x1="200" y1="130" x2="215" y2="165"/>
-      <line x1="215" y1="165" x2="210" y2="205"/>
-    </g>
-  </g>
-</svg>
-
-<p class="caption">Empowered patients move forward with clarity and confidence.</p>
-</section>
-
-<!-- FULL CONTENT SECTIONS (UNCHANGED) WOULD CONTINUE HERE -->
-
-<footer>
-  © <span id="year"></span> Kushwell. Built with integrity. Powered by clarity.<br>
-  Contact: <a href="mailto:hello@kushwell.com">hello@kushwell.com</a>
-</footer>
-
-</div>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
