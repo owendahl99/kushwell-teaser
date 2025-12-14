@@ -91,7 +91,7 @@ a:hover{ text-decoration:underline; }
 
 .pill{
   padding:8px 12px;
-  border-radius:999px;
+  border-radius:999px;Hey, Cortana. Hey, Cortana. Hey, Cortana. Hey, Cortana. Hey, Cortana. Hey, Cortana. Hey, Cortana. Hey, Cortana. Goddamnit. Hey, Cortana. Hey, Cortana. Hey, Cortana. 
   border:1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.05);
   color: var(--muted);
@@ -206,4 +206,93 @@ footer{
   .actions{
     justify-content:center;
   }
+}
+
+/* ======================================================
+   KUSHWELL CORNER SYSTEM (GLOBAL – DO NOT DUPLICATE)
+   ====================================================== */
+:root {
+  /* Corner Canvas */
+  --kw-black: #0b0f14;
+
+  /* Knowledge */
+  --kw-knowledge-dark: #0e1a2a;
+  --kw-knowledge-mid:  #1f3b5a;
+  --kw-knowledge-light:#6ad6ff;
+
+  /* Security */
+  --kw-security-dark: #0f1f1a;
+  --kw-security-mid:  #1f4a3a;
+  --kw-security-light:#7dffb3;
+
+  /* Integrity */
+  --kw-integrity-dark: #1e1a10;
+  --kw-integrity-mid:  #4a3f1f;
+  --kw-integrity-light:#ffd36a;
+}
+
+.corner-header {
+  padding: 56px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  color: #eef3ff;
+}
+
+.corner-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.corner-header p {
+  max-width: 70ch;
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #a7b8d0;
+}
+
+.integrity.level-1 {
+  background: linear-gradient(180deg, var(--kw-integrity-dark), var(--kw-black));
+  border-top: 3px solid rgba(255,211,106,.25);
+}
+
+.integrity.level-2 {
+  background: linear-gradient(180deg, var(--kw-integrity-mid), var(--kw-integrity-dark));
+  border-top: 3px solid rgba(255,211,106,.45);
+}
+
+.integrity.level-3 {
+  background: linear-gradient(180deg, var(--kw-integrity-light), var(--kw-integrity-mid));
+  box-shadow: 0 0 48px rgba(255,211,106,.25);
+}
+
+.knowledge.level-1 {
+  background: linear-gradient(180deg, var(--kw-knowledge-dark), var(--kw-black));
+  border-top: 3px solid rgba(106,214,255,.25);
+}
+
+.knowledge.level-2 {
+  background: linear-gradient(180deg, var(--kw-knowledge-mid), var(--kw-knowledge-dark));
+  border-top: 3px solid rgba(106,214,255,.45);
+}
+
+.knowledge.level-3 {
+  background: linear-gradient(180deg, var(--kw-knowledge-light), var(--kw-knowledge-mid));
+  box-shadow: 0 0 48px rgba(106,214,255,.25);
+}
+
+.security.level-1 {
+  background: linear-gradient(180deg, var(--kw-security-dark), var(--kw-black));
+  border-top: 3px solid rgba(125,255,179,.25);
+}
+
+.security.level-2 {
+  background: linear-gradient(180deg, var(--kw-security-mid), var(--kw-security-dark));
+  border-top: 3px solid rgba(125,255,179,.45);
+}
+
+.security.level-3 {
+  background: linear-gradient(180deg, var(--kw-security-light), var(--kw-security-mid));
+  box-shadow: 0 0 48px rgba(125,255,179,.25);
 }

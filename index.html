@@ -333,47 +333,178 @@
       </p>
       <p class="kicker"><strong>Built for a more mature cannabis industry.</strong></p>
     </header>
+    
+    <section class="content" aria-label="Who Kushwell is for">
+  <div class="content-wrap">
 
-    <section>
-      <h2 class="section-title">Why Kushwell Exists</h2>
-      <p class="lead">
-        <strong>Patients stay in control. Providers earn trust. The ecosystem becomes sustainable.</strong>
-      </p>
-      <div class="callouts">
-        <div class="callout">
-          <strong>In one sentence</strong>
-          Kushwell helps providers embrace the role of guide — ethically, securely, and effectively —
-          so patients can make confident wellness decisions.
-        </div>
-        <div class="callout">
-          <strong>Core principles</strong>
-          <ul>
-            <li>Patients don’t create margins. Providers do.</li>
-            <li>Knowledge that reduces guesswork</li>
-            <li>Security that patients control</li>
-            <li>Integrity with no paid influence</li>
-          </ul>
-        </div>
+    <h2 class="section-title">Who Kushwell Is For</h2>
+
+    <p class="lead">
+      Kushwell is built for <strong>patients</strong>.
+    </p>
+
+    <p class="lead">
+      A patient is not a “user.” A patient is a person on a wellness journey — someone seeking clarity,
+      confidence, and outcomes in how cannabis fits into their life.
+    </p>
+
+    <p class="lead">
+      Patients have been stigmatized, oversimplified, and underserved for decades. At Kushwell,
+      we reject that framing entirely. Patients are the core of everything we do.
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="lead">
+      Kushwell is also built for those who <strong>serve patients</strong>.
+    </p>
+
+    <p class="lead">
+      Dispensaries, budtenders, researchers and ethical industry participants who believe that success comes
+      from meeting patient needs — not rushing transactions, not chasing volume, and not reducing
+      people to price points.
+    </p>
+
+    <p class="lead">
+      We recognize the pressures of margin compression and market saturation. Kushwell exists
+      to help providers do more with less — by placing knowledge, structure, and patient context
+      directly into their hands.
+    </p>
+
       </div>
-    </section>
+<section>
+  <h2 class="section-title">Why Kushwell Exists</h2>
 
-    <section id="cta">
-      <h2 class="section-title">Join the Early Access List</h2>
+  <p class="lead">
+    <strong>
+      Patients deserve clarity, confidence, and respect when making wellness decisions.
+    </strong>
+  </p>
+
+  <p class="lead">
+    The cannabis ecosystem has grown rapidly, introducing an extraordinary range of products
+    and experiences — yet the systems for organizing, protecting, and learning from patient
+    experience have not evolved at the same pace.
+  </p>
+
+  <p class="lead">
+    Patients are often asked to choose without consistent guidance, while providers are
+    expected to support those choices without scalable tools designed for responsible,
+    patient-centered engagement.
+  </p>
+
+  <p class="lead">
+    Kushwell exists to bridge this gap.
+
+  </p>
+
+  <p class="lead">
+    We provide a secure, unbiased platform where patient-reported experience can be captured,
+    aggregated, and shared in a structured way — without paid influence, product placement,
+    or external pressure. Our independence is not for sale.
+  </p>
+
+  <p class="lead">
+    By centering patient participation and preserving data integrity, Kushwell supports
+    clearer insight, stronger trust, and a more sustainable relationship between patients
+    and the professionals who serve them. Patients are the sole source` oF truth.
+  </p>
+
+  <div class="callouts">
+    <div class="callout">
+      <strong>In one sentence</strong>
+      Kushwell helps organize patient experience into trusted, secure insight that supports
+      responsible guidance across the cannabis ecosystem. Patients empowered to guide each other.
+    </div>
+ </div>
+</section>
+
+    <section id=    <div class="cta-wrap">
+
+      <h2 class="section-title">Stay Connected</h2>
+
       <p class="lead">
-        Enter your email to follow our journey toward launch.
+        Kushwell is built around patients — and those who serve them.
+        Select what best describes you so we can share the most relevant updates,
+        or connect directly if you’d like to speak with us.
       </p>
+
       <div class="cta-card">
-        <form class="signup-form" name="kushwell-early-access" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="kushwell-early-access">
-          <input type="email" name="email" placeholder="Email address" required>
-          <button class="btn primary" type="submit">Join early access</button>
+
+        <form
+          name="kushwell-contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="signup-form">
+
+          <input type="hidden" name="form-name" value="kushwell-contact">
+
+          <!-- honeypot -->
+          <p style="display:none;">
+            <label>Don’t fill this out: <input name="bot-field"></label>
+          </p>
+
+          <!-- Email -->
+          <input
+            type="email"
+            name="email"
+            placeholder="Email address"
+            required
+            aria-label="Email address"
+          />
+
+          <!-- Role selection -->
+          <select name="interest_group" required aria-label="I am a…">
+            <option value="" disabled selected>I am a…</option>
+            <option value="patient">Patient</option>
+            <option value="budtender_dispensary">
+              Passionate budtender or dispensary
+            </option>
+            <option value="industry_participant">
+              Other industry participant
+            </option>
+            <option value="investor_relations">
+              Investor / Investor relations
+            </option>
+            <option value="press_media">
+              Press / Media
+            </option>
+          </select>
+
+          <!-- Optional immediate contact -->
+          <div class="checkbox-row">
+            <input type="checkbox" id="urgent_contact" name="urgent_contact" value="yes">
+            <label for="urgent_contact">
+              Please contact me directly
+            </label>
+          </div>
+
+          <!-- Phone (only needed if urgent contact is checked) -->
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone number (optional)"
+            aria-label="Phone number"
+          />
+
+          <button type="submit" class="cta-primary">
+            Stay connected
+          </button>
+
         </form>
-        <p class="founder-note">
-          Thank you for joining us as we march toward opening in early 2026.<br>Stay tuned.
+
+        <p class="cta-note">
+          We respect your time and your privacy.
+          No paid influence. No data resale. Thoughtful updates only.
         </p>
+
       </div>
-    </section>
-  
+
+    </div>
+  </section>
+"contact" aria-label="Contact Kushwell">
+
     <section class="corner" aria-label="The Kushwell Corner">
       <h2 class="section-title">The Kushwell Corner</h2>
 
